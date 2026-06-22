@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthStore } from "./store/authStore";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Login } from "./pages/Login";
-import { Home } from "./pages/Home";
+import { Analyze } from "./pages/Analyze";
 
 function App() {
   const initialize = useAuthStore((s) => s.initialize);
@@ -20,7 +20,7 @@ function App() {
           path="/"
           element={
             <ProtectedRoute>
-              <Home />
+              <Analyze />
             </ProtectedRoute>
           }
         />
