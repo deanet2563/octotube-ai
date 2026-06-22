@@ -118,7 +118,7 @@ Deno.serve(async (req: Request) => {
         .from("analyses")
         .update({ status: "failed", error_message: String(err) })
         .eq("id", claimedAnalysis.id);
-      return jsonResponse({ error: "Failed to generate analysis" }, 500);
+      return jsonResponse({ error: "Failed to generate analysis", detail: String(err) }, 500);
     }
 
     const { data: finalAnalysis, error: updateErr } = await supabase
