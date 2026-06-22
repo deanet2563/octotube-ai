@@ -21,3 +21,21 @@ export interface AnalyzeResult {
   video: Video;
   analysis: Analysis;
 }
+
+export interface LibrarySavedAnalysis {
+  summary: string | null;
+  takeaways: string[] | null;
+}
+
+export interface LibraryItem {
+  id: string;
+  created_at: string;
+  video: {
+    id: string;
+    youtube_id: string;
+    title: string | null;
+    channel_name: string | null;
+    thumbnail_url: string | null;
+    analysis: LibrarySavedAnalysis | null;
+  };
+}

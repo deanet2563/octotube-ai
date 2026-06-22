@@ -4,6 +4,7 @@ import { useAuthStore } from "./store/authStore";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Login } from "./pages/Login";
 import { Analyze } from "./pages/Analyze";
+import { Library } from "./pages/Library";
 
 function App() {
   const initialize = useAuthStore((s) => s.initialize);
@@ -21,6 +22,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Analyze />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/library"
+          element={
+            <ProtectedRoute>
+              <Library />
             </ProtectedRoute>
           }
         />
