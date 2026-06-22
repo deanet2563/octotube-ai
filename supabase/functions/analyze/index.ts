@@ -70,6 +70,7 @@ Deno.serve(async (req: Request) => {
           title: metadata.title,
           channel_name: metadata.channelName,
           thumbnail_url: metadata.thumbnailUrl,
+          duration_seconds: metadata.durationSeconds,
         })
         .select("id")
         .single();
